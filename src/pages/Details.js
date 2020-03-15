@@ -3,7 +3,13 @@ import './styles/Details.scss'
 
 class Home extends React.Component{
   render()  {
-      return <h1> DetailsPage is working</h1>
+      return (
+        <div className="background ">
+          <div className="container">
+          <p>Details is working</p>
+          </div>
+        </div>
+      )
   }
 }
 

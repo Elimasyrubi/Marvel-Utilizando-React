@@ -13,6 +13,7 @@ function App() {
         <Route exact path="/" component={Home}/>
         <Route exact path="/home" component={Home}/>
         <Route exact path="/list/:badgeId/" component={Details}/>
+        <Route exact path="/list" component={Details}/>
       </Switch>
     </Layout>
     </BrowserRouter>

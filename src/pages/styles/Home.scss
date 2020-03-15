@@ -1,10 +1,18 @@
 @import "./VariablesPages.scss"; 
 
-.container{
+.background{
     background-color: $color-claro;
     height: 100vh;
+    margin-top: 1rem;
+ 
+    
 }
+.card_container{
 
-h1{
-    color: #969696;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  
+    
+
 }
