@@ -17,7 +17,7 @@ class Navbar extends React.Component{
                     <button><img src={SearchIcon} className="Navbar_icon" alt="SearchIcon"/></button>
                     <input type="text" placeholder="Buscar" className="Navbar_input"/>
                     <button><img src={StarIcon} className="Navbar_icon" alt="StarIcon"/></button>
-                    <Link to="/list"> List </Link>
+                    <Link to="/list"> Detail </Link>
                 </form>
                 
                 <hr className="Navbar_line"/>
