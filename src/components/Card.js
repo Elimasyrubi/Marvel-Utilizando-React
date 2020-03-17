@@ -4,12 +4,12 @@ import StarIcon from "../images/star.svg";
 import {Link} from 'react-router-dom'
 
 
-class Card extends React.Component {
+function Card(props) {
 
-  render() {
+ 
     return (
       <ul className="card">
-        {this.props.data.map(character => (
+        {props.data.map(character => (
             
               <li  key={character.id}>
                 <Link  to={`/list/${character.id}`}>
@@ -24,7 +24,7 @@ class Card extends React.Component {
         ))}
       </ul>
     );
-  }
+
 }
 
 export default Card;
