@@ -41,7 +41,7 @@ class Home extends React.Component {
         </div>
 
 
-        <Modal isOpen={false}>
+        <Modal isOpen={false} >
           <h2 className="modal_tittle">Spiderman</h2>
           <SearchResult />
         </Modal>
@@ -49,5 +49,6 @@ class Home extends React.Component {
     );
   }
 }
+
 
 export default Home;

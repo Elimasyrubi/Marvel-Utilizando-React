@@ -1,0 +1,55 @@
+@import "./VariablesComponents.scss"; 
+.card{
+    padding-top: 2rem;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    li{
+        position: relative;
+        margin: .5rem .5rem;
+        height: 20rem;
+        width: 15rem;
+        overflow: hidden;
+        border-radius: .8rem;
+        transition: .5s;
+    }
+    &_image{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    }
+    &_icon{
+        position: absolute;
+        top: .4rem;
+        left: 6.5rem;
+        height:  1rem;
+        width:  1rem;
+    }
+    &_name{
+        background-color: rgba(0, 0, 0, 0.562);
+        width: 100%;
+        height: 20%;
+        color: $color-blanco;
+        position: absolute;
+        bottom: -3rem;
+        padding: .5rem 0 0 2rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1rem;
+        transition: .5s;
+    }
+}
+
+.card li:hover {
+    height: 19.8rem;
+    width: 14.8rem;
+    padding: .1rem;
+    .card_name{
+        height: 100%;
+    }
+   
+}
+
+
+

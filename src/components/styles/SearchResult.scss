@@ -1,0 +1,29 @@
+@import "./VariablesComponents.scss"; 
+.SearchResult{
+  
+    &_container{
+        display: flex;
+        background-color: $color-claro;
+        border-radius: 1rem;
+        height: 5rem;
+        overflow: hidden;
+        margin-bottom: .5rem;
+    }
+    &_image{
+        width: 5rem;
+        height: 5rem;
+        object-fit: cover;
+        margin-right: 1rem;
+    }
+    &_icon{
+    width: 1rem;
+    }
+    &_tittle{
+        font-size: 1rem;
+        margin: .3rem 0 0 0 ;
+    }
+    &_text{
+        margin: .3rem 0 0 0;
+        font-size: .8rem;
+    }
+}
