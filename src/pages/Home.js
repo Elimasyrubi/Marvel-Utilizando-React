@@ -18,6 +18,7 @@ class Home extends React.Component {
     query: '',
     loading: false,
     error: null,
+    modalIsOpen:false,
     comicData: {
     data: {
         results: []
@@ -43,6 +44,13 @@ class Home extends React.Component {
       this.setState({ loading: false, error: error });
     }
   };
+
+  handleOpenModal= e =>{
+    this.setState({modalIsOpen:true})
+  }
+  handleCloseModal= e =>{
+    this.setState({modalIsOpen:false})
+  }
 
   render() {
     
@@ -121,11 +129,10 @@ class Home extends React.Component {
           <hr className="Navbar_line" />
         </div>
 
-        <div>
-          <Card data={filter} />
-        </div>
+          <Card data={filter} onOpenModal={this.handleOpenModal} />
 
-        <Modal isOpen={false}>
+
+        <Modal isOpen={this.state.modalIsOpen} onCloseModal={this.handleCloseModal}>
           <h2 className="modal_tittle">Spiderman</h2>
           <SearchResult />
         </Modal>

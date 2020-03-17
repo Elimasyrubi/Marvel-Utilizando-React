@@ -12,7 +12,7 @@ class Modal extends React.Component {
   return ReactDOM.createPortal(
     <div className="modal">
       <div className="modal_container">
-        <button className="modal_close_button">X</button>
+        <button onClick={this.props.onCloseModal} className="modal_close_button">X</button>
         {this.props.children}
       </div>
     </div>,
