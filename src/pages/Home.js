@@ -40,6 +40,7 @@ class Home extends React.Component {
       );
       const data = await response.json();
       this.setState({ comicData: data, loading: false });
+      
     } catch (error) {
       this.setState({ loading: false, error: error });
     }
@@ -123,7 +124,7 @@ class Home extends React.Component {
             <button>
               <img src={StarIcon} className="Navbar_icon" alt="StarIcon" />
             </button>
-            <Link to="/list"> Detail </Link>
+           
           </form>
 
           <hr className="Navbar_line" />
