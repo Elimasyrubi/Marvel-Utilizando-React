@@ -3,6 +3,9 @@ import "./styles/SearchResult.scss";
 import Comic from "../images/comic.jpg";
 import StarIcon from "../images/star.svg";
 
+
+
+
 function SearchResult() {
     return (
         <div className= "SearchResult_container">
