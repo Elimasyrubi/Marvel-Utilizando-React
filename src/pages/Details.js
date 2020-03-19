@@ -1,14 +1,16 @@
 import React from "react";
 import "./styles/Details.scss";
-
+import {Link} from 'react-router-dom';
+import Back from "../images/back.svg";
+import Loader from '../components/Loader';
 
 class Home extends React.Component {
   state = {
     loading: true,
     error: null,
     idhero: undefined,
-    name:undefined,
-    image:undefined,
+    name: undefined,
+    image: undefined,
     comicsList: [],
     comicData: {
       data: {
@@ -36,53 +38,59 @@ class Home extends React.Component {
       let i = 0;
       for (i = 0; i < Datos.length; i++) {
         if (idPage == this.state.comicData.data.results[i].id) {
-          this.setState({ 
+          this.setState({
             idhero: i,
             name: Datos[i].name,
-            image:`${Datos[i].thumbnail.path}.${Datos[i].thumbnail.extension}`,
+            image: `${Datos[i].thumbnail.path}.${Datos[i].thumbnail.extension}`,
             comicsList: Datos[i].comics.items
           });
-      
+
           //`${character.thumbnail.path}.${character.thumbnail.extension}`
-          console.log(this.state.idhero);
+         // console.log(this.state.idhero);
         }
       }
-      console.log(Datos);
-      console.log(this.state.comicsList);
     } catch (error) {
       this.setState({ loading: false, error: error });
     }
   };
 
+
+
   render() {
+    if(this.state.loading){
+      return(
+        <Loader/>
+      )
+    }
+
 
     return (
-    
       <div className="background ">
         <div className="container">
+          <Link className="volver" to="/">
+          <img src={Back} alt="icono Back"/>
+          </Link>
+          
           <div className="details">
-            <img src={this.state.image} alt="comiic" className="details_image"  alt={this.state.name}/>
+            <img
+              src={this.state.image}
+              alt="comic"
+              className="details_image"
+              alt='hero'
+            />
             <div>
-              <h2>{this.state.name}</h2>
-           
-           <div className="comics">
-             <p>Comics donde ha estado {this.state.name} </p>
+              <h2 className="details_tittle">{this.state.name}</h2>
+              <div className="details_comics">
+                <p className="comics_tittle">Lista de Comics de este personaje </p>
+                <ul className="comics_list">
 
-
-
-             <ul className="comics_list">
-               {
-               this.state.comicsList.map((heroe,index) => (
-                 <li key={index}>
-                   <p>{heroe.name}</p>
-                 </li>
-               )
-
-               )
-               }
-             </ul>
-
-           </div>
+                  {this.state.comicsList.map((heroe, index) => (
+                    <li key={index}>
+                      <p className="comics_items">{heroe.name}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </div>

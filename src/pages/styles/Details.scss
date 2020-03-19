@@ -2,12 +2,88 @@
 
 
 .details{
-    display: flex;
-    height: 100vh;
+    
     &_image{
-        width: 20rem;
-        height: 30rem;
-        margin-right: 2rem;
-       
+        width: 90%;
+        height: 20rem;
+        display: block;
+        margin: 0 auto 2rem auto;
+        object-fit: cover;
+        border-radius: 1.5rem;
+    }
+    &_tittle{
+    padding-left:1rem ;
+    margin: 0;
+    font-size: 2rem;
+    text-align:center;
+    }
+    &_comics{
+        padding: 0 1rem 1rem 1rem;
+    }
+}
+@media(min-width:$Medium){
+    .details{
+        &_image{
+        width: 90%;
+        height: 20rem;
+        }
+    }
+}
+@media(min-width:$Desktop){
+    .details{
+        display: flex;
+        &_image{
+            width: 25rem;
+            height: 30rem;
+            margin-right: 2rem;
+        }
+        &_tittle{
+            text-align:start;
+        }
+    }
+}
+.volver{
+    img{
+        height: 2rem;
+        margin: 0 0 2rem 2rem;
+
+    }
+}
+.comics{
+    &_tittle{
+        font-weight: bold;
+        margin: .5rem 0 1.5rem 0;
+        text-align: center;
+    }
+    &_list{
+        list-style: none;
+        padding: 0;
+       // display: flex;
+       // flex-wrap: wrap;
+        margin: 0;
+        text-align: center;
+    }
+    &_items{
+        font-size: 1rem;
+        margin:.3rem .3rem 0 0;
+        padding: .2rem 1rem;
+        border-radius: 1rem;
+        border: 1px solid $color-oscuro;
+        justify-content: center;
+    }
+    &_items:hover{
+        background-color: $color-oscuro ;
+        color: $color-blanco;
+    }
+}
+@media(min-width:$Desktop){
+    .comics{
+        &_list{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        &_tittle{
+            text-align:start;
+        }
     }
 }

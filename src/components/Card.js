@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 
 function Card(props) {
   return (
+  
     <ul className="card">
       {props.data.map(character => (
         <li key={character.id}>
@@ -19,13 +20,13 @@ function Card(props) {
               alt={character.name}
             />
           </Link>
-
           <a className="card_icon" href="/">
             <img src={StarIcon} className="card_icon" alt="StarIcon" />
           </a>
         </li>
       ))}
     </ul>
+  
   );
 }
 

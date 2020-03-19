@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles/SearchResult.scss";
-import Comic from "../images/comic.jpg";
+import Comic from "../images/marvelLogo.png";
 import StarIcon from "../images/star.svg";
 
 
