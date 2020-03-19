@@ -51,7 +51,7 @@ class Home extends React.Component {
     if (this.state.loading) {
       return <Loader />;
     }
-
+    
     const characters = this.state.comicData.data.results;
     const filter = characters.filter(characters => {
       return characters.name
@@ -65,51 +65,12 @@ class Home extends React.Component {
 
     if (filter.length === 0) {
       return (
-        
         <div>
-            <div className="Navbar">
-              <Link to="/">
-                <img className="Navbar_logo" src={Logo} alt="logo marvel" />
-              </Link>
-              <hr className="Navbar_line" />
-              <form>
-                <button>
-                  <img
-                    src={SearchIcon}
-                    className="Navbar_icon"
-                    alt="SearchIcon"
-                  />
-                </button>
-                <input
-                  value={this.state.query}
-                  onChange={e => {
-                    this.setState({ query: e.target.value });
-                  }}
-                  type="text"
-                  placeholder="Busca tu personaje favorito"
-                  className="Navbar_input"
-                />
-                <button>
-                  <img src={StarIcon} className="Navbar_icon" alt="StarIcon" />
-                </button>
-                
-              </form>
-
-              <hr className="Navbar_line" />
-            </div>
-          <NotFound />
-        </div>
-      );
-    }
-
-    return (
-    
-        <div className="background">
           <div className="Navbar">
             <Link to="/">
               <img className="Navbar_logo" src={Logo} alt="logo marvel" />
             </Link>
-            <hr className="Navbar_line" />
+            <div className="Navbar_line" />
             <form>
               <button>
                 <img
@@ -120,9 +81,7 @@ class Home extends React.Component {
               </button>
               <input
                 value={this.state.query}
-                onChange={e => {
-                  this.setState({ query: e.target.value });
-                }}
+                onChange={e => {this.setState({ query: e.target.value });}}
                 type="text"
                 placeholder="Busca tu personaje favorito"
                 className="Navbar_input"
@@ -131,23 +90,51 @@ class Home extends React.Component {
                 <img src={StarIcon} className="Navbar_icon" alt="StarIcon" />
               </button>
             </form>
-
-            <hr className="Navbar_line" />
+            <div className="Navbar_line" />
           </div>
-          
-          <h1 className="container test">Test Eliezer - Marvel</h1>
-        
-          <Card data={filter} onOpenModal={this.handleOpenModal} />
-          
-          <Modal
-            isOpen={this.state.modalIsOpen}
-            onCloseModal={this.handleCloseModal}
-          >
-            <h2 className="modal_tittle">Spiderman</h2>
-            <SearchResult />
-          </Modal>
+          <NotFound />
         </div>
-     
+      );
+    }
+
+    return (
+      <div className="background">
+        <div className="Navbar">
+          <Link to="/">
+            <img className="Navbar_logo" src={Logo} alt="logo marvel" />
+          </Link>
+          <div className="Navbar_line" />
+          <form>
+            <button>
+              <img src={SearchIcon} className="Navbar_icon" alt="SearchIcon" />
+            </button>
+            <input
+              value={this.state.query}
+              onChange={e => {
+                this.setState({ query: e.target.value });
+              }}
+              type="text"
+              placeholder="Busca tu personaje favorito"
+              className="Navbar_input"
+            />
+            <button>
+              <img src={StarIcon} className="Navbar_icon" alt="StarIcon" />
+            </button>
+          </form>
+          <div className="Navbar_line" />
+        </div>
+
+        <h1 className="container test">Test Eliezer - Marvel</h1>
+        <Card data={filter} onOpenModal={this.handleOpenModal} />
+        
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onCloseModal={this.handleCloseModal}
+        >
+          <h2 className="modal_tittle">Spiderman</h2>
+          <SearchResult />
+        </Modal>
+      </div>
     );
   }
 }

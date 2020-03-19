@@ -1,5 +1,5 @@
 /* Color */
-$color-blanco: #ffffff   ;
+$color-blanco: #ffffff;
 $color-claro: #F7F8FA;
 $color-oscuro: rgb(94, 94, 94);
 $color-rojo: #EE171F;
@@ -28,8 +28,3 @@ $Large:1200px;
         max-width: 1200px; 
     }
 } 
-
-  
-@media(min-width:$Medium){} //medium
-@media(min-width:$Desktop){} //Desktop
-@media(min-width:$Large){} //Large

@@ -1,8 +1,8 @@
 import React from "react";
 import "./styles/Details.scss";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import Back from "../images/back.svg";
-import Loader from '../components/Loader';
+import Loader from "../components/Loader";
 
 class Home extends React.Component {
   state = {
@@ -19,7 +19,6 @@ class Home extends React.Component {
     }
   };
 
-  //console.log(this.props.match.params.badgeId)
   componentDidMount() {
     this.fetchData();
   }
@@ -44,9 +43,6 @@ class Home extends React.Component {
             image: `${Datos[i].thumbnail.path}.${Datos[i].thumbnail.extension}`,
             comicsList: Datos[i].comics.items
           });
-
-          //`${character.thumbnail.path}.${character.thumbnail.extension}`
-         // console.log(this.state.idhero);
         }
       }
     } catch (error) {
@@ -54,36 +50,32 @@ class Home extends React.Component {
     }
   };
 
-
-
   render() {
-    if(this.state.loading){
-      return(
-        <Loader/>
-      )
+    if (this.state.loading) {
+      return <Loader />;
     }
 
-
     return (
-      <div className="background ">
+      <React.Fragment className="background ">
         <div className="container">
           <Link className="volver" to="/">
-          <img src={Back} alt="icono Back"/>
+            <img src={Back} alt="icono Back" />
           </Link>
-          
+
           <div className="details">
             <img
               src={this.state.image}
               alt="comic"
               className="details_image"
-              alt='hero'
+              alt="hero"
             />
             <div>
               <h2 className="details_tittle">{this.state.name}</h2>
               <div className="details_comics">
-                <p className="comics_tittle">Lista de Comics de este personaje </p>
+                <p className="comics_tittle">
+                  Lista de Comics de este personaje{" "}
+                </p>
                 <ul className="comics_list">
-
                   {this.state.comicsList.map((heroe, index) => (
                     <li key={index}>
                       <p className="comics_items">{heroe.name}</p>
@@ -94,7 +86,7 @@ class Home extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

@@ -1,6 +1,6 @@
 @import "./VariablesComponents.scss"; 
+
 .SearchResult{
-  
     &_container{
         display: flex;
         background-color: $color-claro;
@@ -16,7 +16,7 @@
         margin-right: 1rem;
     }
     &_icon{
-    width: 1rem;
+        width: 1rem;
     }
     &_tittle{
         font-size: 1rem;

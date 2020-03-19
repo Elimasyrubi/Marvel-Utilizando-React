@@ -3,12 +3,8 @@ import "./styles/Card.scss";
 import StarIcon from "../images/star.svg";
 import { Link } from "react-router-dom";
 
-
-
-
 function Card(props) {
   return (
-  
     <ul className="card">
       {props.data.map(character => (
         <li key={character.id}>
@@ -26,7 +22,6 @@ function Card(props) {
         </li>
       ))}
     </ul>
-  
   );
 }
 
