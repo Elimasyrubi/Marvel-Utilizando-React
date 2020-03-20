@@ -27,7 +27,7 @@ class Home extends React.Component {
     this.setState({ loading: true, error: null });
     try {
       const response = await fetch(
-        "https://gateway.marvel.com:443/v1/public/characters?apikey=b880453eb1ab8bd6dab05e2d968864ad"
+        "https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=b880453eb1ab8bd6dab05e2d968864ad&hash=e1d9463a032f3aef03c2129907e924c7"
       );
       const data = await response.json();
       this.setState({ comicData: data, loading: false });

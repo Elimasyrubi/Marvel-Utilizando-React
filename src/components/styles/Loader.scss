@@ -1,0 +1,30 @@
+@import "./VariablesComponents.scss"; 
+
+.loader{
+  background-color: $color-claro;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading_logo{
+  max-width: 6rem;
+  max-height: 3rem;
+  padding: 2rem;
+  animation: loading_logo 1.2s linear infinite;
+}
+@keyframes loading_logo {
+
+  0%,
+  100% {
+    max-width: 5rem;
+    max-height: 2rem;
+  }
+
+  50% {
+    max-width: 6.5rem;
+    max-height: 2.6rem;
+  }
+}

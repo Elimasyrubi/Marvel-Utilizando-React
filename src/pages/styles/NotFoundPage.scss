@@ -1,0 +1,26 @@
+@import "./VariablesPages.scss";
+
+.fondo{
+    padding-top: 2rem;
+    height: 100vh;
+    background-image: url(https://static-asset-delivery.hasbroapps.com/d4d8ccc5d7283c12117ccb3db9024ed79cdf4fef/93b566648f2f8a121d123b2a48a9650c.png);
+    background-repeat: no-repeat;
+    background-position: bottom ;
+    background-size: 30rem;
+    background-color: $color-claro;
+    &_img{
+        width: 20rem;
+   }
+}
+.mensaje, .error{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+    padding-left: 2rem;
+}
+.error{
+    color: red;
+    font-size: 3rem;
+}
